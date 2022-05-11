@@ -1,4 +1,5 @@
 import time, os, random
+
 try:
     from pynput.keyboard import Key, Controller
     from pynput.mouse import Controller as MouseController
@@ -31,11 +32,12 @@ def start():
         input('not valid int ')
         start()
     input("reset then press enter to start and tab back to roblox ")
+    time.sleep(5)
+    keyboard.press('1')
     main(timeLeft)
 
 def main(timeLeft):
     print('running...')
-    time.sleep(5)
     toDig()
     time.sleep(2)
     startMine(timeLeft)
@@ -53,7 +55,6 @@ def toDig():
     keyboard.release(Key.space)
 
 def startMine(timeLeft):
-    keyboard.press('1')
     #auto clicker
     timeLeft = timeLeft * 60
     for x in range(timeLeft):
@@ -87,6 +88,5 @@ def startMine(timeLeft):
     time.sleep(1)
     keyboard.press(Key.enter)
     keyboard.release(Key.enter)'''
-#sell()
 start()
 input()
